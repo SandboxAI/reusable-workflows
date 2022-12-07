@@ -11,8 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     name: "Perform wiz scan"
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
       - name: Run commands 1
         run: |
           echo Run command 1

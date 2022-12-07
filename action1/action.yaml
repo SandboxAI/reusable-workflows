@@ -1,0 +1,23 @@
+name: 'My Action 1'
+description: 'Connect your GitHub Action workflow to Tailscale'
+branding:
+  icon: 'arrow-right-circle'
+  color: 'gray-dark'
+inputs:
+  version:
+    description: 'Tailscale version to use.'
+    required: true
+    default: '1.24.2'
+runs:
+    using: 'composite'
+    steps:
+      - name: Download Tailscale
+        shell: bash
+        env:
+          VERSION: ${{ inputs.version }}
+        run: |
+          echo $VERSION
+      - name: Run Tailscale
+        shell: bash
+        run: |
+          echo Run the action..

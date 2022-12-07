@@ -1,0 +1,22 @@
+name: Test reusable workflows
+
+on: 
+  push:
+    branches:
+      - main
+  workflow_call:
+
+jobs:    
+  wiz-scan:
+    runs-on: ubuntu-latest
+    name: "Perform wiz scan"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Run commands 1
+        run: |
+          echo Run command 1
+      - name: Run commands 2
+        run: |
+          echo Run command 2
+      
